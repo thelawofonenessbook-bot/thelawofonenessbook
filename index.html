@@ -1,0 +1,328 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Law of Oneness | Ancient Wisdom & Modern Manifestation</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg-dark: #0b232f;
+            --bg-deep: #06141b;
+            --gold: #dfb76c;
+            --gold-hover: #f1cd8a;
+            --text-light: #f5f7f8;
+            --text-muted: #a0b2bc;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(223, 183, 108, 0.2);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* NAVIGATION */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            background: linear-gradient(to bottom, rgba(6,20,27,0.9), transparent);
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.25rem;
+            color: var(--gold);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .nav-links a {
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: radial-gradient(circle at 80% 40%, var(--bg-dark) 0%, var(--bg-deep) 70%);
+            padding-top: 100px;
+        }
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero-text h1 span {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            font-family: sans-serif;
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--bg-deep);
+        }
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold);
+        }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        /* ESSENCE/ABOUT SECTION */
+        .essence {
+            padding: 8rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .essence h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        .essence p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FREE GUIDE / LEAD MAGNET SECTION */
+        .lead-magnet {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%);
+        }
+        .lm-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 4rem;
+            border-radius: 12px;
+        }
+        .lm-image img {
+            max-width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+        .lm-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .lm-text p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .optin-form {
+            display: flex;
+            gap: 1rem;
+        }
+        .optin-form input {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.3);
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        .optin-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* FOOTER & SOCIALS */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            background-color: var(--bg-deep);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .social-icons a {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header { padding: 1.5rem 5%; }
+            .nav-links { display: none; } /* Simplicity for landing page */
+            .hero-container, .lm-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            .hero-text h1 { font-size: 2.5rem; }
+            .cta-buttons { justify-content: center; }
+            .optin-form { flex-direction: column; }
+            .lm-container { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="logo">THE LAW OF ONENESS</div>
+        <nav class="nav-links">
+            <a href="#about">The Essence</a>
+            <a href="#gift">Free Guide</a>
+            <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Links</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1><span>The New Book</span>The Law of Oneness</h1>
+                <p class="hero-tagline">Ancient Wisdom • Modern Manifestation. Gurbani teachings tailored uniquely for living in complete alignment, purpose, and peace within the modern world.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Buy on Amazon</a>
+                    <a href="#gift" class="btn btn-secondary">Get Free Guide</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Ideal placeholder for your main book mockup -->
+                <img src="ChatGPT Image Jun 7, 2026, 06_29_16 PM.png" alt="The Law of Oneness Hardcover and Kindle Edition">
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ESSENCE STATEMENT -->
+    <section class="essence" id="about">
+        <h2>Ancient Wisdom for a Modern World</h2>
+        <p>Inspired by the core foundational truths of Gurbani, <em>The Law of Oneness</em> bridges timeless spiritual depths with modern manifestation practices.</p>
+        <p>This work is crafted entirely to guide you toward finding absolute clarity, grounding, and supreme purpose amid the noise of daily contemporary life.</p>
+    </section>
+
+    <!-- FREE LEAD MAGNET SECTION -->
+    <section class="lead-magnet" id="gift">
+        <div class="lm-container">
+            <div class="lm-image">
+                <!-- Ideal place for an alternate reading scene mockup -->
+                <img src="ChatGPT Image Jun 7, 2026, 06_28_57 PM.png" alt="Reading the digital edition">
+            </div>
+            <div class="lm-text">
+                <h2>Begin Your Journey</h2>
+                <p>Download the exclusive free companion resource, <strong>"The 10 Oneness Guide"</strong>, to immediately start implementing these shifts into your lifestyle habits.</p>
+                <form class="optin-form" onsubmit="event.preventDefault(); alert('Thank you! Your guide is on the way.');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Send My Guide</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">TikTok</a>
+        </div>
+        <p>&copy; 2026 The Law of Oneness. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
