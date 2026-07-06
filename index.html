@@ -237,7 +237,7 @@ HTML
             font-size: 1.1rem;
             letter-spacing: 1px;
             color: var(--text-muted);
-            text-transform: uppercase;
+            text-transform: none;
         }
         .social-icons a:hover {
             color: var(--gold);
@@ -246,7 +246,7 @@ HTML
         /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             header { padding: 1.5rem 5%; }
-            .nav-links { display: none; } /* Simplicity for landing page */
+            .nav-links { display: none; }
             .hero-container, .lm-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -267,7 +267,7 @@ HTML
         <nav class="nav-links">
             <a href="#about">The Essence</a>
             <a href="#gift">Free Guide</a>
-            <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Links</a>
+            <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
         </nav>
     </header>
 
@@ -278,12 +278,11 @@ HTML
                 <h1><span>The New Book</span>The Law of Oneness</h1>
                 <p class="hero-tagline">Ancient Wisdom • Modern Manifestation. Gurbani teachings tailored uniquely for living in complete alignment, purpose, and peace within the modern world.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Buy on Amazon</a>
-                    <a href="#gift" class="btn btn-secondary">Get Free Guide</a>
+                    <a href="https://www.amazon.co.uk/dp/B0D5D3H79W" target="_blank" class="btn btn-primary">Buy on Amazon</a>
+                    <a href="https://linktr.ee/thelawofonenessbook" target="_blank" class="btn btn-secondary">Get Free Guide</a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Ideal placeholder for your main book mockup -->
                 <img src="ChatGPT Image Jun 7, 2026, 06_29_16 PM.png" alt="The Law of Oneness Hardcover and Kindle Edition">
             </div>
         </div>
@@ -300,16 +299,14 @@ HTML
     <section class="lead-magnet" id="gift">
         <div class="lm-container">
             <div class="lm-image">
-                <!-- Ideal place for an alternate reading scene mockup -->
                 <img src="ChatGPT Image Jun 7, 2026, 06_28_57 PM.png" alt="Reading the digital edition">
             </div>
             <div class="lm-text">
                 <h2>Begin Your Journey</h2>
-                <p>Download the exclusive free companion resource, <strong>"The 10 Oneness Guide"</strong>, to immediately start implementing these shifts into your lifestyle habits.</p>
-                <form class="optin-form" onsubmit="event.preventDefault(); alert('Thank you! Your guide is on the way.');">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary">Send My Guide</button>
-                </form>
+                <p>Download the exclusive free companion resource, <strong>"The 10 Oneness Guide"</strong>, directly from our Linktree to start implementing these powerful shifts into your lifestyle habits today.</p>
+                <div class="cta-buttons">
+                    <a href="https://linktr.ee/thelawofonenessbook" target="_blank" class="btn btn-primary">Access Free Guide</a>
+                </div>
             </div>
         </div>
     </section>
@@ -318,8 +315,8 @@ HTML
     <footer>
         <div class="social-icons">
             <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/thelawofonenessbook/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@thelawofonenessbook" target="_blank">TikTok</a>
         </div>
         <p>&copy; 2026 The Law of Oneness. All rights reserved.</p>
     </footer>
