@@ -204,7 +204,7 @@
             border-color: var(--gold);
         }
 
-        /* CALM SCROLLING MARQUEE BAR */
+        /* CLEAN SCROLLING MARQUEE BAR */
         .marquee-container {
             overflow: hidden;
             background: linear-gradient(90deg, #071922 0%, #0b232f 50%, #071922 100%);
@@ -217,8 +217,8 @@
         .marquee-content {
             display: inline-flex;
             animation: scroll 35s linear infinite;
-            gap: 6rem;
-            padding-right: 6rem;
+            gap: 4rem;
+            padding-right: 4rem;
         }
         .marquee-content span {
             font-family: 'Georgia', serif;
@@ -228,10 +228,10 @@
             color: var(--gold);
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 4rem; /* Generous gap to separate phrase sections cleanly */
         }
         
-        /* COVER ART MATCHED ENCIRCLED EK SYMBOL */
+        /* DESIGN ACCENTED ENCIRCLED EMBEDDED SYMBOL */
         .symbol-circle {
             display: inline-flex;
             align-items: center;
@@ -240,13 +240,16 @@
             height: 36px;
             border: 1.5px solid var(--gold);
             border-radius: 50%;
-            padding-bottom: 2px;
             font-family: 'Georgia', serif;
             font-style: normal;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: bold;
             color: var(--gold);
             opacity: 0.95;
+            /* Injects a very slight, elegant aesthetic curve and skew to mimic the stylized book font */
+            transform: skewX(-4deg) rotate(-2deg); 
+            padding-right: 1px;
+            padding-bottom: 2px;
         }
 
         /* ESSENCE/ABOUT SECTION */
@@ -372,12 +375,13 @@
         </div>
     </section>
 
-    <!-- CORRECTED SCROLLING BAR MATCHING THE COVER -->
+    <!-- STREAMLINED, BALANCED SCROLLING BAR -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span><div class="symbol-circle">੧</div> gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
-            <span><div class="symbol-circle">੧</div> gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
-            <span><div class="symbol-circle">੧</div> gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
         </div>
     </div>
 
