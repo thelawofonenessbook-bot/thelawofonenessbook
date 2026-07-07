@@ -71,7 +71,7 @@
             color: var(--gold);
         }
 
-        /* ANIMATION KEYFRAMES */
+        /* INITIAL LOAD ANIMATIONS */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -91,6 +91,24 @@
         @keyframes scroll {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
+        }
+
+        /* SCROLL REVEAL ANIMATIONS (Gracie Barra Style) */
+        @keyframes scrollReveal {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            animation: scrollReveal linear both;
+            animation-timeline: view();
+            animation-range: entry 10% cover 40%;
         }
 
         /* HERO SECTION */
@@ -186,7 +204,7 @@
             border-color: var(--gold);
         }
 
-        /* CALM, SLOW SCROLLING MARQUEE BAR */
+        /* CALM SCROLLING MARQUEE BAR */
         .marquee-container {
             overflow: hidden;
             background: linear-gradient(90deg, #071922 0%, #0b232f 50%, #071922 100%);
@@ -198,7 +216,7 @@
         }
         .marquee-content {
             display: inline-flex;
-            animation: scroll 45s linear infinite; /* Slowed down from 25s to 45s for a relaxed drift */
+            animation: scroll 35s linear infinite; /* Optimized from 45s to 35s for the perfect pace */
             gap: 6rem;
             padding-right: 6rem;
         }
@@ -212,12 +230,22 @@
             align-items: center;
             gap: 2rem;
         }
-        .symbol {
+        
+        /* ENCIRCLED EMBEDDED SYMBOL */
+        .symbol-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            padding-bottom: 2px;
             font-family: sans-serif;
             font-style: normal;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--gold);
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         /* ESSENCE/ABOUT SECTION */
@@ -307,6 +335,8 @@
             .hero-text h1 .main-title { font-size: 2.5rem; }
             .cta-buttons { justify-content: center; }
             .lm-container { padding: 2rem; }
+            /* Turn off scroll timelines on small viewports to maintain smooth scrolling */
+            .reveal-on-scroll { animation: none; }
         }
     </style>
 </head>
@@ -342,24 +372,24 @@
         </div>
     </section>
 
-    <!-- GENTLE, MINIMALIST SCROLLING BAR -->
+    <!-- OPTIMIZED GENTLE SCROLLING BAR -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span><span class="symbol">ੴ</span> gurbani teachings for living in oneness <span class="symbol">ੴ</span></span>
-            <span><span class="symbol">ੴ</span> gurbani teachings for living in oneness <span class="symbol">ੴ</span></span>
-            <span><span class="symbol">ੴ</span> gurbani teachings for living in oneness <span class="symbol">ੴ</span></span>
+            <span><div class="symbol-circle">ੴ</div> gurbani teachings for living in oneness <div class="symbol-circle">ੴ</div></span>
+            <span><div class="symbol-circle">ੴ</div> gurbani teachings for living in oneness <div class="symbol-circle">ੴ</div></span>
+            <span><div class="symbol-circle">ੴ</div> gurbani teachings for living in oneness <div class="symbol-circle">ੴ</div></span>
         </div>
     </div>
 
     <!-- THE ESSENCE STATEMENT -->
-    <section class="essence" id="about">
+    <section class="essence reveal-on-scroll" id="about">
         <h2>Ancient Wisdom for a Modern World</h2>
         <p>Inspired by the core foundational truths of Gurbani, <em>The Law of Oneness</em> bridges timeless spiritual depths with modern manifestation practices.</p>
         <p>This work is crafted entirely to guide you toward finding absolute clarity, grounding, and supreme purpose amid the noise of daily contemporary life.</p>
     </section>
 
     <!-- FREE LEAD MAGNET SECTION -->
-    <section class="lead-magnet" id="gift">
+    <section class="lead-magnet reveal-on-scroll" id="gift">
         <div class="lm-container">
             <div class="lm-image">
                 <img src="ChatGPT Image Jun 7, 2026, 06_28_57 PM.png" alt="Reading the digital edition">
@@ -375,7 +405,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="reveal-on-scroll">
         <div class="social-icons">
             <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
             <a href="https://www.instagram.com/thelawofonenessbook/" target="_blank">Instagram</a>
