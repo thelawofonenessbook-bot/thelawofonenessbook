@@ -59,7 +59,7 @@
             font-size: 1.25rem;
             color: var(--gold);
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
         .nav-links a {
             margin-left: 2rem;
@@ -97,7 +97,7 @@
         @keyframes scrollReveal {
             from {
                 opacity: 0;
-                transform: translateY(60px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -129,24 +129,13 @@
             margin: 0 auto;
         }
         
-        .hero-text h1 span {
-            display: block;
-            font-size: 1.5rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 0.5rem;
-            font-family: sans-serif;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.2s;
-        }
         .hero-text h1 .main-title {
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             display: block;
             opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.5s;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
         }
         .hero-tagline {
             font-size: 1.2rem;
@@ -154,13 +143,13 @@
             margin-bottom: 2.5rem;
             font-style: italic;
             opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.8s;
+            animation: fadeInUp 0.8s ease forwards 0.7s;
         }
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 1.1s;
+            animation: fadeInUp 0.8s ease forwards 1.0s;
         }
         
         .hero-image {
@@ -228,7 +217,7 @@
             color: var(--gold);
             display: flex;
             align-items: center;
-            gap: 4rem; /* Generous gap to separate phrase sections cleanly */
+            gap: 4rem;
         }
         
         /* DESIGN ACCENTED ENCIRCLED EMBEDDED SYMBOL */
@@ -246,7 +235,6 @@
             font-weight: bold;
             color: var(--gold);
             opacity: 0.95;
-            /* Injects a very slight, elegant aesthetic curve and skew to mimic the stylized book font */
             transform: skewX(-4deg) rotate(-2deg); 
             padding-right: 1px;
             padding-bottom: 2px;
@@ -276,6 +264,7 @@
         .lead-magnet {
             padding: 6rem 5%;
             background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border-color);
         }
         .lm-container {
             max-width: 1100px;
@@ -301,6 +290,65 @@
         .lm-text p {
             color: var(--text-muted);
             margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* BLOG SECTION */
+        .blog-section {
+            padding: 8rem 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .blog-section h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .blog-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .read-more {
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .read-more:hover {
+            color: var(--text-light);
         }
 
         /* FOOTER & SOCIALS */
@@ -347,10 +395,11 @@
 
     <!-- HEADER / NAVIGATION -->
     <header>
-        <div class="logo">THE LAW OF ONENESS</div>
+        <div class="logo">NIRBHAU</div>
         <nav class="nav-links">
             <a href="#about">The Essence</a>
             <a href="#gift">Free Guide</a>
+            <a href="#blog">Reflections</a>
             <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
         </nav>
     </header>
@@ -360,13 +409,12 @@
         <div class="hero-container">
             <div class="hero-text">
                 <h1>
-                    <span>The New Book</span>
                     <span class="main-title">The Law of Oneness</span>
                 </h1>
                 <p class="hero-tagline">Ancient Wisdom • Modern Manifestation. Gurbani teachings tailored uniquely for living in complete alignment, purpose, and peace within the modern world.</p>
                 <div class="cta-buttons">
                     <a href="https://amzn.eu/d/05O9IAeY" target="_blank" class="btn btn-primary">Buy on Amazon</a>
-                    <a href="https://linktr.ee/thelawofonenessbook" target="_blank" class="btn btn-secondary">Get Free Guide</a>
+                    <a href="https://tr.ee/kTY3I1ir-U" target="_blank" class="btn btn-secondary">Get Free Guide</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -375,13 +423,13 @@
         </div>
     </section>
 
-    <!-- STREAMLINED, BALANCED SCROLLING BAR -->
+    <!-- CORRECTED SCROLLING BAR (CAPITALIZED GURBANI) -->
     <div class="marquee-container">
         <div class="marquee-content">
-            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
-            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
-            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
-            <span>gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>Gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>Gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>Gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
+            <span>Gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
         </div>
     </div>
 
@@ -392,7 +440,7 @@
         <p>This work is crafted entirely to guide you toward finding absolute clarity, grounding, and supreme purpose amid the noise of daily contemporary life.</p>
     </section>
 
-    <!-- FREE LEAD MAGNET SECTION -->
+    <!-- DIRECT LINK DOWNLOAD SECTION -->
     <section class="lead-magnet reveal-on-scroll" id="gift">
         <div class="lm-container">
             <div class="lm-image">
@@ -400,10 +448,23 @@
             </div>
             <div class="lm-text">
                 <h2>Begin Your Journey</h2>
-                <p>Download the exclusive free companion resource, <strong>"The 10 Oneness Guide"</strong>, directly from our Linktree to start implementing these powerful shifts into your lifestyle habits today.</p>
+                <p>Download the exclusive free companion resource, <strong>"The 10 Oneness Practices - Daily Practice Guide"</strong>, directly to your inbox to start implementing these powerful shifts into your lifestyle habits today.</p>
                 <div class="cta-buttons">
-                    <a href="https://linktr.ee/thelawofonenessbook" target="_blank" class="btn btn-primary">Access Free Guide</a>
+                    <a href="https://tr.ee/kTY3I1ir-U" target="_blank" class="btn btn-primary">Access Free Guide</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW BLOG / INSIGHTS SECTION -->
+    <section class="blog-section reveal-on-scroll" id="blog">
+        <h2>Author Journal & Reflections</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <span class="blog-date">July 8, 2026</span>
+                <h3>Why I Wrote The Law of Oneness</h3>
+                <p>The journey to putting these chapters together came from a profound need to ground deep spiritual systems into accessible daily actions. This book wasn't written to just sit on a shelf; it was built to act as a clear portal for modern minds seeking alignment without discarding deep, traditional philosophy...</p>
+                <a href="#" class="read-more">Read Entry →</a>
             </div>
         </div>
     </section>
