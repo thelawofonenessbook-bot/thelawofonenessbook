@@ -43,7 +43,7 @@
             transition: all 0.3s ease;
         }
 
-        /* NAVIGATION */
+        /* NAVIGATION HEADER */
         header {
             display: flex;
             justify-content: space-between;
@@ -54,20 +54,116 @@
             width: 100%;
             z-index: 10;
         }
-        .logo {
+        
+        /* BRAND IDENTITY BRANDING (COVER BRAND ICON) */
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
             font-family: 'Georgia', serif;
-            font-size: 1.25rem;
-            color: var(--gold);
+            font-size: 1.5rem;
             font-weight: bold;
-            letter-spacing: 3px;
+            color: var(--gold);
+            transform: skewX(-4deg) rotate(-2deg);
+            padding-right: 1px;
+            padding-bottom: 2px;
+            cursor: pointer;
         }
-        .nav-links a {
-            margin-left: 2rem;
-            font-size: 0.9rem;
+
+        /* HAMBURGER MENU BUTTON (THREE LINES) */
+        .menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .menu-btn .line {
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Transform lines into an X when open */
+        .menu-btn.open .line:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .menu-btn.open .line:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-btn.open .line:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* SLIDE-OUT NAV DRAWER (Gracie Barra Style) */
+        .nav-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: #071720;
+            border-left: 1px solid var(--border-color);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            z-index: 100;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 6rem 3rem 3rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .nav-drawer.open {
+            right: 0;
+        }
+        .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .drawer-links a {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            color: var(--text-light);
             letter-spacing: 1px;
-            text-transform: uppercase;
         }
-        .nav-links a:hover {
+        .drawer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+        .drawer-links .active-link {
+            color: var(--gold);
+        }
+        
+        .drawer-socials {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+        .drawer-socials p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .drawer-social-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .drawer-social-icons a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .drawer-social-icons a:hover {
             color: var(--gold);
         }
 
@@ -220,7 +316,7 @@
             gap: 4rem;
         }
         
-        /* DESIGN ACCENTED ENCIRCLED EMBEDDED SYMBOL */
+        /* LOGO EMBEDDED SCROLL SYMBOL */
         .symbol-circle {
             display: inline-flex;
             align-items: center;
@@ -347,9 +443,6 @@
             letter-spacing: 1px;
             font-weight: 600;
         }
-        .read-more:hover {
-            color: var(--text-light);
-        }
 
         /* FOOTER & SOCIALS */
         footer {
@@ -377,8 +470,6 @@
 
         /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            header { padding: 1.5rem 5%; }
-            .nav-links { display: none; }
             .hero-container, .lm-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -395,14 +486,33 @@
 
     <!-- HEADER / NAVIGATION -->
     <header>
-        <div class="logo">NIRBHAU</div>
-        <nav class="nav-links">
-            <a href="#about">The Essence</a>
-            <a href="#gift">Free Guide</a>
-            <a href="#blog">Reflections</a>
-            <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
-        </nav>
+        <div class="logo-icon" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">੧</div>
+        
+        <!-- HAMBURGER TRIGGER BUTTON -->
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
     </header>
+
+    <!-- SLIDE OUT DRAWER OVERLAY -->
+    <nav class="nav-drawer" id="navDrawer">
+        <div class="drawer-links">
+            <a href="https://amzn.eu/d/05O9IAeY" target="_blank" class="active-link">Buy on Amazon</a>
+            <a href="https://tr.ee/kTY3I1ir-U" target="_blank">Download Free Guide</a>
+            <a href="#blog" onclick="toggleMenu()">Author Journal</a>
+            <a href="#about" onclick="toggleMenu()">The Essence</a>
+        </div>
+        <div class="drawer-socials">
+            <p>Connect</p>
+            <div class="drawer-social-icons">
+                <a href="https://www.instagram.com/thelawofonenessbook/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@thelawofonenessbook" target="_blank">TikTok</a>
+                <a href="https://linktr.ee/thelawofonenessbook" target="_blank">Linktree</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -423,7 +533,7 @@
         </div>
     </section>
 
-    <!-- CORRECTED SCROLLING BAR (CAPITALIZED GURBANI) -->
+    <!-- MARQUEE TICKER BAR -->
     <div class="marquee-container">
         <div class="marquee-content">
             <span>Gurbani teachings for living in oneness <div class="symbol-circle">੧</div></span>
@@ -456,7 +566,7 @@
         </div>
     </section>
 
-    <!-- NEW BLOG / INSIGHTS SECTION -->
+    <!-- JOURNAL SECTION -->
     <section class="blog-section reveal-on-scroll" id="blog">
         <h2>Author Journal & Reflections</h2>
         <div class="blog-grid">
@@ -478,6 +588,19 @@
         </div>
         <p>&copy; 2026 The Law of Oneness. All rights reserved.</p>
     </footer>
+
+    <!-- INTERACTIVE MENU TOGGLE SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navDrawer = document.getElementById('navDrawer');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('open');
+            navDrawer.classList.toggle('open');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+    </script>
 
 </body>
 </html>
